@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expense tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(expensetracker.jpg);
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+
+        }
+
+        header {
+            background-color: chartreuse;
+            height: 7vh;
+            position: sticky;
+            top: 0;
+
+        }
+
+        header nav ul li {
+            /* float: right; */
+            display: inline-block;
+            /* margin: 4px 30px 4px 30px; */
+            margin: 2vh 30px 4px 30px;
+            padding: 4px 80px 4px 10px;
+            font-size: 100vw;
+            font-size: 1.5vw;
+
+
+        }
+
+        a {
+            text-transform: capitalize;
+            text-decoration: None;
+
+        }
+
+        nav li a:hover {
+            background-color: darkblue;
+            color: chartreuse;
+
+        }
+
+        ul {
+            float: right;
+
+        }
+
+        .start {
+            color: azure;
+            font-size: 1.5vw;
+            margin: 5px 0px 0px 0px;
+            text-align: center;
+        }
+
+        .budget {
+            color: aliceblue;
+            /* text-transform: capitalize; */
+            margin: 5vh 0 0 0;
+            text-align: center;
+        }
+
+        .twobuttons,.twobuttonsv1,.twobuttonsv2 {
+            display: flex;
+            justify-content: space-between;
+            width: 22%;
+            margin: 20px auto;
+            padding top: 80px;
+
+
+        }
+
+        button {
+            background-color: chartreuse;
+            color: blue;
+            border-radius: 5px;
+            /* width: 100px; */
+            height: 5vh;
+
+        }
+
+        button:hover {
+            background-color: darkblue;
+            color: chartreuse;
+        }
+
+        .progress1 ,.progress2,.progress3{
+            /* position: absolute;
+            left: 45%;
+            right: 50%; */
+            position: relative;
+            left: 45%;
+            /* right: 50%; */
+            
+        }
+        .progress1 p,.progress2 p,.progress3 p{
+            color: white;
+        }
+        /* .twobuttonsv1 
+            display: flex;
+            justify-content: space-between;
+            width: 22%;
+            margin: 20px auto;
+            padding top: 80px; */
+
+
+        
+        .expadvice{
+            background-color: black;
+            color: white;
+            width: 100vw;
+            text-align: center;
+            margin: 5vh;
+        }
+        .foradvice{
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin: 20px auto;
+            padding top: 80px;
+
+            
+        }
+       .foradvice {
+           color: white;
+           /* text-align: center; */
+           margin: auto auto 10px auto;
+       }
+       .foradvice p{
+           text-align: center;
+           position: relative;
+           left: 200px;
+       }
+       .foradvice button{
+           margin: 10px 0px 10px 100px;
+       }
+       /* footer{
+           background-color:black;
+           color: aliceblue;
+          height: 10vh;
+          text-align: center;
+          
+       } */
+        
+
+        
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="homepage">home</a></li>
+                        <li><a href="about">about us</a></li>
+                        <li><a href="contact">contact us</a></li>
+
+                    </ul>
+                </nav>
+            </header>
+
+        </section>
+        <section>
+            <div class="start">
+                <h2>your expense tracker</h2>
+            </div>
+            <div class="budget">
+                <form action="calculatedbudget">
+                    <p>
+                        <label for="inputbudget">
+                            Enter your Budget(in Rs) for this month
+                            <input type="text">
+                        </label>
+                    </p>
+                </form>
+            </div>
+            <!-- <div class="o">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam molestiae est perspiciatis rerum possimus ut placeat blanditiis quam quasi autem eveniet cumque, consequatur dolores magnam velit. Assumenda, cum. Quis labore modi odio at ab deleniti placeat. Saepe placeat consectetur ratione omnis facilis! Quod, quae autem!
+            </div> -->
+            <div class="twobuttons">
+                <div class="ob">
+                    <button>Add expense</button>
+                </div>
+                <div class="sb">
+                    <button>View expense history</button>
+                </div>
+            </div>
+            <div class="progress1"><p>
+                Books
+                <p><progress id="file" value="32" max="100"> 32% </progress></p>
+            </p>
+            </div>
+            <div class="twobuttonsv1">
+                <div class="ob1">
+                    <button>Add expense</button>
+                </div>
+                <div class="sb1">
+                    <button>View expense history</button>
+                </div>
+            </div>
+            <div class="progress2"><p>
+                Grocery  
+                <p><progress id="file" value="50" max="100"> 50% </progress></p>
+            </p>
+            </div>
+            <div class="twobuttonsv2">
+                <div class="ob2">
+                    <button>Add expense</button>
+                </div>
+                <div class="sb2">
+                    <button>View expense history</button>
+                </div>
+            </div>
+            <div class="progress1"><p>
+                electronic devices 
+                <p><progress id="file" value="88" max="100"> 88% </progress></p>
+            </p>
+            </div>
+            <div class="expadvice">
+                <h2>Expert Advice</h2>
+            </div>
+           <div class="foradvice">
+               <form action="advicefromexp"> 
+                   <p>
+                       <label for="advice">
+                           expert advice to save your budget
+                           <button>click here for help</button>
+
+                       </label>
+                   </p>
+                   
+               </form>
+           </div>
+
+            
+
+        </section>
+        <!-- <section>
+            <footer>
+                copyright @copy;
+            </footer>
+        </section> -->
+    </main>
+
+</body>
+
+</html>
